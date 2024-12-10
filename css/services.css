@@ -1,0 +1,135 @@
+.services-wrapper {
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.services {
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2rem;
+  color: #333; /* Dark color for the heading */
+  margin-bottom: 15px;
+}
+
+.service-list {
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: space-evenly; /* Space items evenly */
+}
+
+/* Service Item */
+.service-item {
+  position: relative; /* Enable positioning for overlay */
+  padding: 15px;
+  margin: 10px; /* Space between items */
+  width: calc(33.33% - 20px); /* Set width for 3 items in a row */
+  height: 200px; /* Fixed height for square boxes */
+  display: flex; /* Flexbox for centering content */
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition for transform and opacity */
+  opacity: 0; /* Initially hidden */
+  transform: translateY(50px); /* Move down 50px for more pronounced effect */
+  background-size: cover; /* Ensure the background covers the area */
+  background-position: center; /* Center the background image */
+}
+
+/* Background overlay for better text visibility */
+.service-item::before {
+  content: ""; /* Create an empty pseudo-element */
+  position: absolute; /* Position it absolutely within the service-item */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1; /* Place it behind the text */
+}
+
+.service-item h3,
+.service-item p {
+  position: relative; /* Position text above the overlay */
+  z-index: 2; /* Ensure text is above the overlay */
+}
+
+.service-item.visible {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move back to original position */
+}
+
+/* Hover Effect */
+.service-item:hover {
+  transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+.service-item h3 {
+  font-size: 1.5rem;
+  color: #fff; /* Change heading color to white for contrast */
+  margin-bottom: 10px;
+  text-align: center; /* Center the heading text */
+}
+
+.service-item p {
+  font-size: 1rem;
+  color: #fff; /* Change paragraph color to white for contrast */
+  text-align: center; /* Center the paragraph text */
+  line-height: 1.5;
+}
+
+.service-link {
+  text-decoration: none; /* Remove underline from the link */
+  color: #333; /* Set the text color */
+}
+
+.service-link:hover {
+  text-decoration: none; /* Ensure underline doesn't appear on hover */
+}
+
+.service-item a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Make link color inherit from parent element */
+}
+
+.service-item a:hover {
+  text-decoration: none; /* Ensure underline is removed on hover as well */
+}
+
+/* Media Query for Responsiveness */
+@media (max-width: 768px) {
+  .service-item {
+    width: calc(50% - 20px); /* 2 items per row on tablets */
+  }
+
+  .service-link {
+    text-decoration: none; /* Remove underline from the link */
+    color: #333; /* Set the text color */
+  }
+
+  .service-link:hover {
+    text-decoration: none; /* Ensure underline doesn't appear on hover */
+  }
+}
+
+@media (max-width: 480px) {
+  .service-item {
+    width: 100%; /* 1 item per row on mobile */
+    height: auto; /* Adjust height for mobile */
+  }
+
+  .service-link {
+    text-decoration: none; /* Remove underline from the link */
+    color: #333; /* Set the text color */
+  }
+
+  .service-link:hover {
+    text-decoration: none; /* Ensure underline doesn't appear on hover */
+  }
+}
+
+.service-list .service-item {
+  text-decoration: none; /* Remove underline from links */
+}

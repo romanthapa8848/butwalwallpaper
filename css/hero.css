@@ -1,0 +1,56 @@
+/* Hero section styles */
+.hero-container {
+  height: 500px; /* Set the height of the hero container */
+  overflow: hidden; /* Hide any overflow from images */
+}
+
+.hero {
+  position: relative; /* For positioning child elements */
+  height: 100%; /* Use full height of the container */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  text-align: center; /* Center text */
+  padding: 0; /* Remove any padding */
+  margin: 0; /* Remove any margin */
+}
+
+/* Container for the image slides */
+.hero-gallery {
+  display: flex; /* Arrange images in a row */
+  transition: transform 1s ease-in-out; /* Increase transition duration and set easing */
+  height: 100%; /* Ensure the container takes full height */
+  width: 100%; /* Ensure the container takes full width */
+  position: absolute; /* Positioning the gallery absolutely */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+}
+
+.hero-gallery img {
+  min-width: 100%; /* Each image should fill the viewport width */
+  height: 100%; /* Set height to fill the hero section */
+  object-fit: cover; /* Ensure the image covers the area */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hero-container {
+    height: 300px; /* Adjust height for smaller screens */
+  }
+
+  .hero-gallery {
+    transition: transform 1s ease-in-out; /* Keep the same transition */
+  }
+
+  .hero-gallery img {
+    min-width: 100%; /* Each image should still fill the viewport width */
+    height: 100%; /* Maintain height to fill the hero section */
+    object-fit: cover; /* Ensure the image covers the area */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    height: 250px; /* Further adjust height for very small screens */
+  }
+}
